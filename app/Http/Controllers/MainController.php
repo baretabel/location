@@ -22,7 +22,7 @@ class MainController extends Controller
         $voitures->immatriculation = $request->immatriculation;
         $voitures->image = $request->image;
         $voitures->save();
-        return redirect()->action('MainController@home');
+        return redirect()->action('MainController@voiture');
     }
     public function reser(Request $request){
       $user=$request->user1." ".$request->user2;
@@ -32,7 +32,7 @@ class MainController extends Controller
       $lieux->lieu_id= $request->lieu;
       $lieux->user = $user;
       $lieux->save();
-      return redirect()->action('MainController@voiture');
+      return redirect()->action('MainController@home');
   }
 
 
